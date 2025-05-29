@@ -1,24 +1,17 @@
+import { Image } from "expo-image";
 import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
+
+const PlaceholderImage = require("../../assets/images/images/background-image.png");
 
 export default function Index() {
   return (
     <View
       style={ styles.container }
     >
-      
-      <Text style={styles.text}>
-        Edit app/index.tsx to edit this screena.
-        {'\n'}
-        <Link href="/test">
-          <Text style={ styles.button }>Go to test screen</Text>
-        </Link>
-        {'\n'}
-        <Link href="/test2">
-          <Text style={ styles.button }>Go to test2 screen</Text>
-        </Link>
-      </Text>
-      
+      <View style={ styles.imageContainer }>
+        <Image source={PlaceholderImage} style={styles.image}/>
+      </View>
     </View>
   );
 }
@@ -37,5 +30,14 @@ export default function Index() {
       textDecorationLine: 'underline',
       color: '#0f0',
     },
+    imageContainer: {
+      flex: 1,
+    },
+    image: {
+      width: 320,
+      height: 440,
+      borderRadius: 18,
+    },
+
   })
 
